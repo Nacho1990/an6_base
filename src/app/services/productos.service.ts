@@ -9,8 +9,11 @@ export class ProductosService {
 
   constructor( private http:Http) { 
 
-    this.cargar_productos();
+    this.cargar_productos();    
+  }
 
+  public cargar_producto(cod:string){
+    return this.http.get(`https://paginaweb-d9478.firebaseio.com/productos/${ cod }.json`)
   }
   public cargar_productos(){
 
